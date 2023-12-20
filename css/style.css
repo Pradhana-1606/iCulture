@@ -1,0 +1,94 @@
+:root {
+  --background-color: #f4f4f4;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* bagian hero */
+.hero {
+  background-color: var(--background-color);
+  background-image: url('../img/diamond-beach-penida-island-bali.jpg');
+  background-size: cover;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px #1a1a1a;
+}
+
+.hero .container {
+  height: 100%;
+}
+
+.hero h1 {
+  font-weight: 800;
+  font-size: 4rem;
+}
+
+.hero .col-lg-6:nth-child(2) h1 {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 20rem;
+  font-weight: 800;
+  text-orientation: mixed;
+  text-shadow: none;
+  writing-mode: vertical-lr;
+}
+
+
+
+
+/* Media Queries */
+
+/* Handphone */
+@media only screen and (max-width: 600px) {
+  /* bagian hero */
+  .hero {
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero .col-lg-6:nth-child(2) h1 {
+    display: none;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 600px) {
+  /* bagian hero */
+  .hero {
+    height: 100vh;
+  }
+
+  .hero .col-lg-6:nth-child(2) h1 {
+    display: none;
+  }
+}
+
+/* Tablet Landscape */
+@media only screen and (min-width: 768px) {
+  /* bagian hero */
+  .hero .col-lg-6:nth-child(2) h1 {
+    display: none;
+  }
+}
+
+/* Laptop */
+@media only screen and (min-width: 992px) {
+  /* bagian hero */
+  .hero {
+    height: 100vh;
+  }
+  .hero .col-lg-6:nth-child(2) h1 {
+    display: block;
+  }
+}
+
+/* Tv */
+@media only screen and (min-width: 1200px) {
+  /* bagian hero */
+  
+}
