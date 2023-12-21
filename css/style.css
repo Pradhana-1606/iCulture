@@ -1,23 +1,44 @@
 :root {
-  --background-color: #f4f4f4;
+  --background-color: #ffffff;
+  --secondary-color: #f4f4f4;
+  --dark-color: #1a1a1a;
+  --primary-color: #4169e1;
 }
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
+  text-shadow: 1px 1px 1px #f4f4f4;
 }
 
 /* bagian hero */
 .hero {
-  background-color: var(--background-color);
-  background-image: url('../img/diamond-beach-penida-island-bali.jpg');
+  background-color: var(--secondary-color);
+  background-image: url("../img/diamond-beach-penida-island-bali.jpg");
   background-size: cover;
   color: #ffffff;
   font-size: 1.2rem;
-  text-shadow: 1px 1px 3px #1a1a1a;
+  height: 110vh;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 110vh;
+  background-image: linear-gradient(
+    to top,
+    rgba(26, 26, 26, 1),
+    rgba(0, 0, 0, 0)
+  );
+  position: absolute;
+  bottom: -10vh;
 }
 
 .hero .container {
   height: 100%;
+  position: relative;
+  z-index: 9999;
 }
 
 .hero h1 {
@@ -29,24 +50,407 @@
   color: rgba(255, 255, 255, 0.8);
   font-size: 20rem;
   font-weight: 800;
+  padding-bottom: 3rem;
   text-orientation: mixed;
   text-shadow: none;
   writing-mode: vertical-lr;
 }
 
+/* Bagian Panel */
+.panel {
+  position: relative;
+  z-index: 9999;
+  margin-top: -50px;
+}
 
+.panel .container {
+  background-color: var(--background-color);
+  border-radius: 10px;
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.5);
+  padding: 1rem 1rem 0;
+}
 
+.panel h3 {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.panel p {
+  font-size: 1rem;
+}
+
+/* Bagian Keberagaman */
+.keberagaman .image {
+  width: 30rem;
+  height: 30rem;
+  position: relative;
+}
+
+.keberagaman .gambar {
+  height: 10rem;
+  width: 15rem;
+  position: absolute;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.keberagaman .gambar:nth-child(1) {
+  background-color: green;
+  background-image: url(../img/Gawai\ Dayak.jpg);
+  background-size: cover;
+  left: 13rem;
+  top: 3rem;
+}
+
+.keberagaman .gambar:nth-child(2) {
+  background-color: royalblue;
+  background-image: url(../img/TARI\ GAMBYONG.jpg);
+  background-size: cover;
+  left: 0;
+  top: 10rem;
+}
+
+.keberagaman .gambar:nth-child(3) {
+  background-color: yellow;
+  background-image: url(../img/membatik.jpg);
+  background-size: cover;
+  left: 10rem;
+  top: 18rem;
+}
+
+.keberagaman .gambar:nth-child(4) {
+  background-color: green;
+  background-image: url(../img/TARI\ DAYAK.jpg);
+  background-size: cover;
+  z-index: -10;
+  left: 5rem;
+  top: 14rem;
+}
+
+.keberagaman .gambar:nth-child(5) {
+  background-color: royalblue;
+  background-image: url(../img/ua-kalimantan.jpg);
+  background-size: cover;
+  z-index: -20;
+  left: 3rem;
+  top: 6rem;
+}
+
+.keberagaman .gambar:nth-child(6) {
+  background-color: orange;
+  background-image: url(../img/ua-toraja.jpg);
+  background-size: cover;
+  z-index: -5;
+  left: 8rem;
+  top: 10rem;
+}
+
+.keberagaman h1 {
+  font-weight: bold;
+}
+
+.keberagaman p {
+  text-align: justify;
+}
+
+/* Bagian Semboyan */
+.semboyan h1 {
+  font-weight: bold;
+}
+
+.semboyan p {
+  text-align: justify;
+}
+
+.semboyan img {
+  width: 30rem;
+}
+
+/* Bagian Carousel */
+.carousel-option {
+  margin-top: 4rem;
+}
+
+.carousel-option .container {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.carousel-option h1 {
+  font-weight: bold;
+}
+
+.carousel {
+  display: block;
+  text-align: left;
+  position: relative;
+}
+.carousel > input {
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+.carousel
+  > input:nth-of-type(6):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -500%;
+}
+.carousel
+  > input:nth-of-type(5):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -400%;
+}
+.carousel
+  > input:nth-of-type(4):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -300%;
+}
+.carousel
+  > input:nth-of-type(3):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -200%;
+}
+.carousel
+  > input:nth-of-type(2):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: -100%;
+}
+.carousel
+  > input:nth-of-type(1):checked
+  ~ .carousel__slides
+  .carousel__slide:first-of-type {
+  margin-left: 0%;
+}
+.carousel
+  > input:nth-of-type(1):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(1) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+.carousel
+  > input:nth-of-type(2):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(2) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+.carousel
+  > input:nth-of-type(3):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(3) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+.carousel
+  > input:nth-of-type(4):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(4) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+.carousel
+  > input:nth-of-type(5):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(5) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+.carousel
+  > input:nth-of-type(6):checked
+  ~ .carousel__thumbnails
+  li:nth-of-type(6) {
+  box-shadow: 0px 0px 0px 5px rgba(0, 0, 255, 0.5);
+  border-radius: 10px;
+}
+
+.carousel__slides {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.carousel__slide {
+  position: relative;
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  transition: all 300ms ease-out;
+  box-sizing: border-box;
+  white-space: normal;
+}
+.carousel__slide figure {
+  display: flex;
+  margin: 0;
+}
+.carousel__slide div {
+  position: relative;
+  width: 100%;
+}
+.carousel__slide div:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 66.6666666667%;
+}
+.carousel__slide div > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.carousel__slide img {
+  display: block;
+  flex: 1 1 auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.carousel__slide figcaption {
+  align-self: flex-end;
+  padding: 20px 20px 0 20px;
+  flex: 0 0 auto;
+  width: 25%;
+  min-width: 150px;
+}
+.carousel__slide.scrollable {
+  overflow-y: scroll;
+}
+
+.carousel__thumbnails {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  margin: 0 -10px;
+}
+.carousel__slides + .carousel__thumbnails {
+  margin-top: 20px;
+}
+.carousel__thumbnails li {
+  flex: 1 1 auto;
+  max-width: calc(16.6666666667% - 20px);
+  margin: 0 10px;
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails label {
+  display: block;
+  position: relative;
+}
+.carousel__thumbnails label:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 100%;
+}
+.carousel__thumbnails label > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+.carousel__thumbnails label:hover,
+.carousel__thumbnails label:focus {
+  cursor: pointer;
+}
+.carousel__thumbnails label:hover img,
+.carousel__thumbnails label:focus img {
+  box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+  transition: all 300ms ease-in-out;
+}
+.carousel__thumbnails img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/* Bagian Banner */
+.banner {
+  margin: 4rem auto;
+}
+
+.banner .container {
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.banner h1 {
+  font-weight: bold;
+}
+
+.banner h3 {
+  margin-bottom: 2rem;
+}
+
+.banner .col-lg-4 {
+  text-align: center;
+}
+
+.banner .col-lg-4 h3 {
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+.banner img {
+  width: 15rem;
+}
+
+/* Bagian Footer */
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+footer h1 {
+  font-weight: bold;
+}
+
+footer a {
+  color: var(--dark-color);
+  font-size: 1.4rem;
+}
 
 /* Media Queries */
 
 /* Handphone */
 @media only screen and (max-width: 600px) {
   /* bagian hero */
-  .hero {
-    height: 100vh;
-    padding: 1rem;
-  }
-
   .hero h1 {
     font-size: 3rem;
   }
@@ -54,23 +458,137 @@
   .hero .col-lg-6:nth-child(2) h1 {
     display: none;
   }
+
+  /* bagian panel */
+  .panel {
+    margin-top: -60px;
+  }
+
+  .panel .container {
+    width: 90%;
+  }
+
+  .panel h3 {
+    font-size: 1.5rem;
+  }
+
+  .panel p {
+    font-size: 0.8rem;
+  }
+
+  /* Bagian Keberagaman */
+  .keberagaman .image {
+    height: 25rem;
+  }
+
+  .keberagaman .gambar {
+    height: 7rem;
+    width: 10rem;
+  }
+
+  .keberagaman .gambar:nth-child(1) {
+    left: 12rem;
+    top: 3rem;
+  }
+
+  .keberagaman .gambar:nth-child(2) {
+    left: 2rem;
+  }
+
+  .keberagaman .gambar:nth-child(3) {
+    top: 12rem;
+  }
+
+  .keberagaman h1 {
+    font-size: 1.4rem;
+  }
+
+  /* Bagian Semboyan */
+  .semboyan {
+    margin-top: 4rem;
+  }
+
+  .semboyan h1 {
+    font-size: 1.4rem;
+  }
+
+  /* Bagian Carousel */
+  .carousel__slide figure {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel__slide figcaption {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Bagian Banner */
+  .banner {
+    text-align: center;
+  }
+
+  .banner .col-lg-8 a {
+    margin-bottom: 2rem;
+  }
 }
 
 /* Tablet */
 @media only screen and (min-width: 600px) {
   /* bagian hero */
   .hero {
-    height: 100vh;
+    height: 60vh;
+  }
+
+  .hero::after {
+    height: 60vh;
+    top: 0;
   }
 
   .hero .col-lg-6:nth-child(2) h1 {
     display: none;
+  }
+
+  /* Bagian Keberagaman */
+  .keberagaman .image {
+    margin: 0 auto;
+  }
+
+  /* Bagian Carousel */
+  .carousel__slide figure {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel__slide figcaption {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  /* Bagian Banner */
+  .banner {
+    text-align: center;
+  }
+
+  .banner .col-lg-8 a {
+    margin-bottom: 2rem;
   }
 }
 
 /* Tablet Landscape */
 @media only screen and (min-width: 768px) {
   /* bagian hero */
+  .hero {
+    height: 110vh;
+  }
+
+  .hero::after {
+    height: 110vh;
+    bottom: 0;
+  }
+
   .hero .col-lg-6:nth-child(2) h1 {
     display: none;
   }
@@ -79,16 +597,38 @@
 /* Laptop */
 @media only screen and (min-width: 992px) {
   /* bagian hero */
-  .hero {
-    height: 100vh;
-  }
   .hero .col-lg-6:nth-child(2) h1 {
     display: block;
+  }
+
+  /* Bagian Banner */
+  .banner {
+    text-align: left;
+  }
+
+  .banner .col-lg-8 a {
+    margin-bottom: 0;
+  }
+
+  /* Bagian Carousel */
+  .carousel__slide figure {
+    flex-direction: row;
+    display: flex;
+    margin: 0;
+  }
+
+  .carousel__slide figcaption {
+    align-self: flex-end;
+    padding: 20px 20px 0 20px;
+    flex: 0 0 auto;
+    width: 25%;
+    min-width: 150px;
+    text-align: left;
+    margin-top: 0;
   }
 }
 
 /* Tv */
 @media only screen and (min-width: 1200px) {
   /* bagian hero */
-  
 }
